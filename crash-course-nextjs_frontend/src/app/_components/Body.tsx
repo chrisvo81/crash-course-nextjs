@@ -11,6 +11,7 @@ const Body = async () => {
     </div>
   );
 
+  // Bug -- api not working
   // return data ? (
   //   <div>
   //     {data.map((camp: any) => (
