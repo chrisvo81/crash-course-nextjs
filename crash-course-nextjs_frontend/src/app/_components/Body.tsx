@@ -1,15 +1,20 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 const Body = async () => {
-  const response = await fetch("http://localhost:1337/api/camps");
-  console.log("🚀 ~ Body ~ response:", response);
+  const response = await axios.get("http://127.0.0.1:1337/api/camps");
+  const data = response.data.data;
 
-  // const data = response.json();
-  return (
+  return data ? (
     <div>
-      {/* {data ? <pre>{JSON.stringify(data, null, 2)}</pre> : <p>Loading...</p>} */}
+      {data.map((camp: any) => (
+        <div key={camp.id}>
+          <h2>{camp.name}</h2>
+          <p>{camp.description}</p>
+        </div>
+      ))}
     </div>
-  );
+  ) : null;
 };
 
 export default Body;
