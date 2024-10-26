@@ -18,7 +18,8 @@ const Header = () => {
   ];
   return (
     <header className="header">
-      {/* <h1>Next.js Crash Course</h1> */}
+      <h1>Next.js Crash Course</h1>
+      <p>Testing new branch</p>
       {/* <Image
         className="header__logo"
         src="/assets/website-logo.png"
